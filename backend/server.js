@@ -1,5 +1,6 @@
 import app from "./src/app.js";
-require('dotenv').config()
+import dotenv from "dotenv";
+dotenv.config();
 
 app.listen(3000, ()=>{
     try {
