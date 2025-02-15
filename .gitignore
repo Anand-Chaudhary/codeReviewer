@@ -33,9 +33,7 @@ backend/node_modules/
 frontend/build/
 backend/dist/
 
-# Ignore package-lock and yarn.lock if necessary
-**/package-lock.json
-**/yarn.lock
+
 
 # Ignore coverage and test reports
 coverage/
