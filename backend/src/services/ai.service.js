@@ -41,7 +41,7 @@ const model = genAI.getGenerativeModel({
 
                 Output Example:
 
-                ❌ Bad Code:
+                ❌ Issues in your code:
                 \`\`\`javascript
                                 function fetchData() {
                     let data = fetch('/api/data').then(response => response.json());

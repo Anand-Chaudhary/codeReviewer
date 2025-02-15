@@ -23,6 +23,7 @@ main .right{
   width: 100%;
   flex-basis: 50%;
   border-radius: 0.7rem;
+  overflow: auto;
 }
 
 main .left{
@@ -31,6 +32,7 @@ main .left{
 }
 
 main .right{
+  padding: 1rem 2rem;
   background-color: rgb(69, 67, 67);
 }
 
@@ -51,4 +53,5 @@ main .left .review{
   width: 100%;
   margin: 0;
   border-radius: 0.7rem;
+  overflow: auto;
 }

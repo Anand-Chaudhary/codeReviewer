@@ -2,19 +2,22 @@ import './App.css'
 import "prismjs/themes/prism-tomorrow.css"
 import prism from "prismjs"
 import axios from "axios"
+import Markdown from "react-markdown"
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 import Editor from "react-simple-code-editor"
 import { useState } from 'react'
 
 function App() {
-  const [code, setCode] = useState(`function sum() {
-    return 1 + 1;
+  const [code, setCode] = useState(`function sum(a, b) {
+    return a + b;
   }`)
 
+  const [review, setReview] = useState(``);
 
   const reviweCode = async ()=>{
     const response = await axios.post('http://localhost:3000/ai/getReview', {code})
-    console.log(response.data);
-    
+    setReview(response.data)
   }
   return (
     <>
@@ -41,7 +44,14 @@ function App() {
            onClick={reviweCode}
           >Review</div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <Markdown
+          rehypePlugins={[rehypeHighlight]}
+            style={{
+              fontSize: 16
+            }}
+          >{review}</Markdown>
+        </div>
       </main>
     </>
   )
