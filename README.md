@@ -80,6 +80,10 @@ This is a web-based code review tool that allows users to write, edit, and submi
 - HTML
 - CSS
 
+## Creative Features
+- Made a fun and beautiful Loader
+- Framer-Motion for the Loader
+
 ## Contributing
 Feel free to submit issues or pull requests to improve this project.
 
