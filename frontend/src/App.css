@@ -67,3 +67,25 @@ main .left .review-btn{
   border-radius: 0.7rem;
   overflow: auto;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 2rem;
+  color: #e0e0e0;
+}
+
+.loader-ball{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e0e0e0;
+}
+
+.loading{
+  color: #e0e0e0;
+  font-size: 2rem;
+  display: flex;
+}

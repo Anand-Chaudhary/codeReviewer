@@ -66,3 +66,29 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-ball {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.loading {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}

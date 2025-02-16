@@ -13,6 +13,7 @@ import "prismjs/components/prism-c"
 import "prismjs/components/prism-cpp"
 import "prismjs/components/prism-go"
 import "prismjs/components/prism-rust"
+import Loader from './components/Loader'
 
 const languages = {
   javascript: "JavaScript",
@@ -35,7 +36,7 @@ function App() {
   const reviewCode = async () => {
     try {
       setText(
-        `Analyzing your code...`
+        <Loader />
       );
       const response = await axios.post('http://localhost:3000/ai/getReview', { code, language });
       setReview(response.data);
@@ -80,20 +81,14 @@ function App() {
           <button className="review-btn" onClick={reviewCode}>Review</button>
         </div>
         <div className="right">
-          <div 
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-            className="loader"
-          >
-            {text}
-          </div>
+          {!review ? (
+            <p className="loader">{text}</p>
+          ) : (
           <Markdown
             rehypePlugins={[rehypeHighlight]}
             style={{ fontSize: 16 }}
           >{review}</Markdown>
+          )}
         </div>
       </main>
     </>
