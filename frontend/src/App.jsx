@@ -30,13 +30,19 @@ function App() {
   const [code, setCode] = useState(`console.log("Hello, World!");`);
   const [language, setLanguage] = useState("javascript");
   const [review, setReview] = useState(``)
+  const [text, setText] = useState(`Click Review to get started`)
 
   const reviewCode = async () => {
     try {
+      setText(
+        `Analyzing your code...`
+      );
       const response = await axios.post('http://localhost:3000/ai/getReview', { code, language });
-      setReview(response.data)
+      setReview(response.data);
     } catch (error) {
       console.error("Error fetching code review:", error);
+    } finally {
+      setText(``)
     }
   };
 
@@ -74,9 +80,19 @@ function App() {
           <button className="review-btn" onClick={reviewCode}>Review</button>
         </div>
         <div className="right">
+          <div 
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+            className="loader"
+          >
+            {text}
+          </div>
           <Markdown
-          rehypePlugins={[rehypeHighlight]}
-          style={{fontSize:16}}
+            rehypePlugins={[rehypeHighlight]}
+            style={{ fontSize: 16 }}
           >{review}</Markdown>
         </div>
       </main>
