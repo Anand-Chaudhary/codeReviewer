@@ -74,7 +74,9 @@ function App() {
                 fontSize: 16,
                 borderRadius: "5px",
                 height: "90%",
-                width: "100%"
+                width: "100%",
+                overflow: "visible",
+                overflowY: "visible"
               }}
             />
           </div>
