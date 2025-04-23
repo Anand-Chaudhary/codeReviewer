@@ -33,7 +33,7 @@ This is a web-based code review tool that allows users to write, edit, and submi
 ### Steps:
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/code-review-app.git
+   git clone https://github.com/Anand-Chaudhary/code-review-app.git
    cd code-review-app
    ```
 
