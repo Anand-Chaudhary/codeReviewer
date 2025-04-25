@@ -35,13 +35,15 @@ function App() {
 
   const reviewCode = async () => {
     try {
+      console.log("Starting review process...");
       setText(
         <Loader />
       );
       const response = await axios.post('http://codereviewer-backend-5zi1.onrender.com/ai/getReview', { code, language });
       setReview(response.data);
     } catch (error) {
-      console.error("Error fetching code review:", error);
+      console.error("Error details:", error.response || error);
+      setText("An error occurred while reviewing the code.");
     } finally {
       setText(``)
     }
