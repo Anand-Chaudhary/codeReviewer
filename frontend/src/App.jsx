@@ -35,13 +35,23 @@ function App() {
 
   const reviewCode = async () => {
     try {
+      console.log("Starting review process...");
       setText(
         <Loader />
       );
-      const response = await axios.post('https://codereviewer-backend-5zi1.onrender.com/ai/getReview', { code, language });
+      const response = await axios.post(`${import.meta.env.VITE_APP_URL}/ai/getReview`, 
+        { code, language },
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+      );
       setReview(response.data);
     } catch (error) {
-      console.error("Error fetching code review:", error);
+      console.error("Error details:", error.response || error);
+      setText("An error occurred while reviewing the code.");
     } finally {
       setText(``)
     }
