@@ -38,7 +38,7 @@ function App() {
       setText(
         <Loader />
       );
-      const response = await axios.post('https://codereviewer-backend-5zi1.onrender.com/ai/getReview', { code, language });
+      const response = await axios.post('http://codereviewer-backend-5zi1.onrender.com/ai/getReview', { code, language });
       setReview(response.data);
     } catch (error) {
       console.error("Error fetching code review:", error);
@@ -84,7 +84,7 @@ function App() {
         </div>
         <div className="right">
           {!review ? (
-            <p className="loader">{text}</p>
+            <div className="loader">{text}</div>
           ) : (
           <Markdown
             rehypePlugins={[rehypeHighlight]}
