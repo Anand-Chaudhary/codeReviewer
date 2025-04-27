@@ -89,10 +89,12 @@ function App() {
           {!review ? (
             <div className="loader">{text}</div>
           ) : (
-          <Markdown
-            rehypePlugins={[rehypeHighlight]}
-            style={{ fontSize: 16 }}
-          >{review}</Markdown>
+            <div className="markdown-content">
+              <Markdown
+                rehypePlugins={[rehypeHighlight]}
+                style={{ fontSize: 16 }}
+              >{review}</Markdown>
+            </div>
           )}
         </div>
       </main>
