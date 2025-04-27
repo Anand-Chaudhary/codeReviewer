@@ -66,21 +66,22 @@ function App() {
           </select>
 
           <div className="code">
-            <Editor
-              value={code}
-              onValueChange={setCode}
-              highlight={code => prism.highlight(code, prism.languages[language] || prism.languages.javascript, language)}
-              padding={10}
-              style={{
-                fontFamily: '"Fira Code", "Fira Mono", monospace',
-                fontSize: 16,
-                borderRadius: "5px",
-                height: "90%",
-                width: "100%",
-                overflow: "visible",
-                overflowY: "visible"
-              }}
-            />
+            <div className="editor-container">
+              <Editor
+                value={code}
+                onValueChange={setCode}
+                highlight={code => prism.highlight(code, prism.languages[language] || prism.languages.javascript, language)}
+                padding={10}
+                style={{
+                  fontFamily: '"Fira Code", "Fira Mono", monospace',
+                  fontSize: 16,
+                  backgroundColor: 'transparent',
+                  color: '#e0e0e0',
+                  width: '100%',
+                  outline: 'none',
+                }}
+              />
+            </div>
           </div>
           <button className="review-btn" onClick={reviewCode}>Review</button>
         </div>
