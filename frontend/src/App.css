@@ -130,7 +130,6 @@ textarea {
   color: inherit;
 }
 
-/* Media Queries for responsiveness */
 @media (min-width: 768px) {
   main .left,
   main .right {
