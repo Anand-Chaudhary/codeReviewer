@@ -39,7 +39,10 @@ function App() {
       setText(
         <Loader />
       );
-      const response = await axios.post('https://codereviewer-backend-5zi1.onrender.com/ai/getReview', { code, language });
+      const response = await axios.post(
+        `${import.meta.env.VITE_PUBLIC_BACKEND_URL}/ai/getReview`,
+        { code, language }
+      );      
       setReview(response.data);
     } catch (error) {
       console.error("Error details:", error.response || error);
