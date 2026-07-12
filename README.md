@@ -1,6 +1,6 @@
 # Code Review Platform — Cloud-Native DevOps Case Study
 
-**Live Demo:** [https://codereviewer-4ph0.onrender.com/](https://codereviewer-4ph0.onrender.com/)
+**Live Demo:** [https://code-reviewer-4ph0.onrender.com/](https://code-reviewer-4ph0.onrender.com/)
 
 ---
 

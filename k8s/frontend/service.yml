@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: codeReviewer-frontend-service
+  name: code-reviewer-frontend-service
 spec:
   selector:
-    app.kubernetes.io/name: codeReviewer-frontend
+    app: code-reviewer-frontend
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 5173
-    
+      targetPort: 80

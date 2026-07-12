@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: codeReviewer-backend-deployment
+  name: code-reviewer-backend-deployment
   labels:
-    app: codeReviewer-backend
+    app: code-reviewer-backend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: codeReviewer-backend
+      app: code-reviewer-backend
   template:
     metadata:
       labels:
-        app: codeReviewer-backend
+        app: code-reviewer-backend
     spec:
       containers:
-      - name: codeReviewer-backend
-        image: codeReviewer-backend:latest
+      - name: code-reviewer-backend
+        image: aahhhkash/code-reviewer-backend:backend-latest
         ports:
         - containerPort: 3000
