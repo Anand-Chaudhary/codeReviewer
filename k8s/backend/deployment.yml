@@ -4,6 +4,7 @@ metadata:
   name: code-reviewer-backend-deployment
   labels:
     app: code-reviewer-backend
+  namespace: code-reviewer-namespace
 spec:
   replicas: 3
   selector:
