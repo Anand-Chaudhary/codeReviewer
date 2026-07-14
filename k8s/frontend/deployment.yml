@@ -18,5 +18,6 @@ spec:
       containers:
       - name: code-reviewer-frontend
         image: aahhhkash/code-reviewer-frontend:frontend-latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
